@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweat Alert</title>
+    <style>
+      button {
+        font-family: 'ubuntu';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <script src="/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <button id="btn1">Sweat Alert</button>
+
+    <script>
+        const btn1 = document.getElementById('btn1')
+      function popUp() {
+        swal("Good job!", "Hayder Aly Jutt Goriay", "success");
+        // swal("Good job!", "Hayder Aly Jutt Goriay", "error");
+        // swal("Good job!", "Hayder Aly Jutt Goriay", "warning");
+        // swal("Try Again!", "Hayder Aly Jutt Goriay", "try again");
+        
+        swal({
+            title : "Good Job",
+            text : 'You Clicked the Button !',
+            icon : 'success',
+            button : 'Login'
+        })
+      }
+
+      btn1.addEventListener('click',popUp);
+
+    </script>
+  </body>
+</html>

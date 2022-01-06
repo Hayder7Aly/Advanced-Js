@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+
+
+    <h1>Local Storage</h1>
+
+    
+    <script>
+
+        const val = document.getElementById('name').value;
+        const btn =document.getElementById('check');
+        const result = document.getElementById('result');
+
+        function myfunc(){
+            console.log(val)
+        }
+
+    
+        btn.addEventListener('click',myfunc)
+
+        
+        // 1. Setitem in localStorage
+
+        // localStorage.setItem('Name' , 'Hayder Aly')
+        // localStorage.setItem('Role' , 'Programmer')
+        // localStorage.setItem('Removing' ,'Removing')
+
+        // 2. getitem in localStorage 
+
+        // console.log(localStorage.getItem('Role'))
+        // console.log(localStorage.getItem('Name'))
+
+        // Assume that if the data is not in the local storage then  
+
+        // console.log(localStorage.getItem('hadihf'))  // returns null
+
+
+        // 3. Remove Data in Local Storage
+
+        // console.log(localStorage.removeItem('Removing')) 
+        // console.log(localStorage.removeItem('dfd')) //returns undefined
+        
+
+        // 4. How to set an object in local storage 
+
+        // set Data 
+
+        // const friends = ['Hayder','Aly','Harry','Carry']
+        // const data = localStorage.setItem('Friends' , JSON.stringify(friends))
+        // console.log(data)
+
+        // reterive data 
+
+        // const reterive = localStorage.getItem('Friends')
+        // console.log(JSON.parse(reterive))
+
+
+        // short way 
+
+        // console.log(localStorage.setItem('Friends' , JSON.stringify(['Hayder','Aly'])))
+        // console.log(JSON.parse(localStorage.getItem('Friends')))
+
+
+
+        
+    </script>
+</body>
+</html>

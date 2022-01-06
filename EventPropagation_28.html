@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html{
+          font-size: 62.5%;
+      }
+      body{
+        width: 100vw;
+        height: 100vh;
+        background: rgb(2, 0, 36);
+        background: #dc95a0;
+        background: -webkit-linear-gradient(bottom right, #dc95a0, #084288);
+        background: -moz-linear-gradient(bottom right, #dc95a0, #084288);
+        background: linear-gradient(to top left, #dc95a0, #084288);
+        display: grid;
+        place-items: center;
+      }
+
+      .parent{
+          width: 50vw;
+          height: 50vh;
+          background-color: #77acee;
+          border-radius: 1rem;
+          display: grid;
+          place-items: center;
+
+      }
+
+      .child{
+          width: 15rem;
+          height: 15rem;
+          background-color: #e9c7cc;
+          border-radius: 1rem;
+          box-shadow: 1rem 1rem 1rem #77acee;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+      <!-- Event Bubbling  -->
+    <!-- <div class="parent" onclick = "parnetCall()">
+      <div class="child" onclick="childCall()"></div>
+    </div> -->
+
+
+
+
+    <!-- EventCapturing  -->
+
+    <div class="parent" id = 'parent'>
+        <div class="child" id = 'child'></div>
+    </div>
+
+    <script>
+      // Event Propagation in Js
+    //  1. Event bubbling 
+    // Bottom to Top Work in Event is Called Bubble Phase . This is default .   
+
+    // const parnetCall = () => {
+    //     alert('Parent Call')
+    // }
+
+    // const childCall = () => {
+    //     alert('Child Call')
+    //     event.stopPropagation()
+        
+    // };
+
+
+ 
+    // 2. Event Captruing 
+     
+    // Top to Bottom Work in Event Is Called Capturing Phase.
+
+
+    // use id for this . 
+
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+
+    const parnetCall = () => {
+        alert('Parent Call')
+        event.stopPropagation() ;// if you use event capturing and stop propagation then deploy event in the top of parent or last event .  
+    }
+
+    const childCall = () => {
+        alert('Child Call')
+ 
+        
+    };
+
+
+    parent.addEventListener('click',parnetCall,true)
+    child.addEventListener('click',childCall,true)
+
+
+
+
+    
+
+
+    </script>
+  </body>
+</html>

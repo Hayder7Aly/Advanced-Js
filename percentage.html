@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Of Students</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+            font-family: 'Ubuntu';
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child{
+            padding: 50px;
+            width: 40%;
+            height: 50%;
+            background-color: #191b2e;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .child > *{
+            margin: 5px 0;
+        }
+
+        .heading{
+            color: #fff;
+        }
+
+        .inputBx{
+            width: 100%;
+        }
+
+ 
+
+        input[type='text']{
+            padding: 5px 4px;
+            outline: none;
+            border: none;
+            width: 100%;
+
+
+        }
+
+        .answer{
+            text-align: center;
+            color: #fff;
+        }
+
+        .button{
+            padding: 3px 4px;
+            text-transform: capitalize;
+            background-color: #32375f;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="child">
+            <div class="heading">
+                <h1>Smart Calculation</h1>
+            </div>
+            <div class="inputBx">
+                <input type="text" class="percentof" id="percentof" placeholder="Percentage">
+            </div>
+            <div class="inputBx">
+                <input type="text" class="totalof" id="totalof" placeholder="Total Marks">
+            </div>
+
+            <div class="button">
+                Check out
+            </div>
+
+            <div class="answer">
+                <p class="put"> = 24.34</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const percentage = document.getElementById('percentof')
+        const total = document.getElementById('totalof')
+        const answer = document.querySelector('.put');
+        const button = document.querySelector('.button')
+
+        button.addEventListener('click' , (e)=>{
+            answer.innerHTML = ''
+            let percent = +percentage.value;
+            let totalVal = +total.value;
+            answer.innerHTML = percent * totalVal / 100;
+        });
+
+
+        
+    </script>
+    
+</body>
+</html>
